@@ -4,7 +4,10 @@
 import sys
 import json
 import requests
+import matplotlib
 import matplotlib.pyplot as plt
+
+matplotlib.use('tkagg')
 
 if hasattr(sys.stdout, 'reconfigure'):
 	sys.stdout.reconfigure(encoding='utf-8')
@@ -188,6 +191,7 @@ class Parser:
 
 		plt.figure(figsize=(5, 2.7), layout='constrained')
 		plt.plot(xAxis, yAxis, 'o-')
+
 		self.drawPlot('Year [-]', 'Population [mil.]', 'Compare population by year', True)
 
 	def drawComparingCountriesPlot(self, country_names: list) -> None:
@@ -267,17 +271,17 @@ class Parser:
 if __name__ == '__main__':
 	try:
 		parser = Parser('https://countriesnow.space/api/v0.1/countries')
-		parser.getCountryPopulation('Czech Republic')
-		parser.getCities('Czech Republic')
-		parser.getCitiesPopulation(2008, 'Czech Republic', 10)
-		parser.getImageCountryFlag('Czech Republic')
-		parser.getUnicodeCountryFlag('Czech Republic')
-		parser.getCountriesCurrency()
-		parser.getDialCodeWithCurrency()
+		# parser.getCountryPopulation('Czech Republic')
+		# parser.getCities('Czech Republic')
+		# parser.getCitiesPopulation(2008, 'Czech Republic', 10)
+		# parser.getImageCountryFlag('Czech Republic')
+		# parser.getUnicodeCountryFlag('Czech Republic')
+		# parser.getCountriesCurrency()
+		# parser.getDialCodeWithCurrency()
 
-		parser.drawSinglePlot('Czech Republic')
-		parser.drawComparingCountriesPlot(['Czech Republic', 'Poland', 'Germany', 'Austria', 'Slovak Republic'])
-		parser.drawComparingCitiesPlot(['Plzen', 'Praha', 'Ostrava', 'Brno'])
+		# parser.drawSinglePlot('Czech Republic')
+		# parser.drawComparingCountriesPlot(['Czech Republic', 'Poland', 'Germany', 'Austria', 'Slovak Republic'])
+		# parser.drawComparingCitiesPlot(['Plzen', 'Praha', 'Ostrava', 'Brno'])
 
 	except Exception as e:
 		print(f'[Main] Error in main function: \n\t{e}')
