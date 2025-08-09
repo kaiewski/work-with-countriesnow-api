@@ -14,7 +14,7 @@ A small project that can be developed into a full-fledged Python library for wor
 - **-** Display a graph of the population by year for the selected country. **(using the Czech Republic as a standard)**.
 - **-** Display a graph of the population by year for comparison between selected countries.
 - **-** Display a graph of the population by year for comparison between selected cities.
-- **-** All results are returned as a .json string or dictionary.
+- **-** All results are returned as a .json string, dictionary or default string.
 
 ## Developers
 
